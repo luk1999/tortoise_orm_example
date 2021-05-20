@@ -1,0 +1,31 @@
+# OSX leaves these everywhere on SMB shares
+._*
+
+# OSX trash
+.DS_Store
+
+# Python
+*.pyc
+
+credentials.json
+test/source.sh
+
+# Idea
+.idea
+*.iml
+
+# vscode
+.vscode
+
+# jupyter notebooks
+**/*.ipynb
+
+# virtualenv
+**/.venv*
+**/venv*
+
+# Byte-compiled / optimized / DLL files
+*/__pycache__/
+
+*.sqlite
+*.sqlite3

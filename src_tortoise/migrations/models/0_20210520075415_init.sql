@@ -1,0 +1,21 @@
+-- upgrade --
+CREATE TABLE IF NOT EXISTS `user` (
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `username` VARCHAR(100) NOT NULL UNIQUE
+) CHARACTER SET utf8mb4;
+CREATE TABLE IF NOT EXISTS `usergroup` (
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `name` VARCHAR(50) NOT NULL
+) CHARACTER SET utf8mb4;
+CREATE TABLE IF NOT EXISTS `aerich` (
+    `id` INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    `version` VARCHAR(255) NOT NULL,
+    `app` VARCHAR(20) NOT NULL,
+    `content` TEXT NOT NULL
+) CHARACTER SET utf8mb4;
+CREATE TABLE IF NOT EXISTS `user_group` (
+    `user_id` INT NOT NULL,
+    `usergroup_id` INT NOT NULL,
+    FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+    FOREIGN KEY (`usergroup_id`) REFERENCES `usergroup` (`id`) ON DELETE CASCADE
+) CHARACTER SET utf8mb4;

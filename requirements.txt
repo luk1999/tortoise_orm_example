@@ -1,0 +1,4 @@
+aerich==0.5.3
+aiomysql==0.0.21
+sanic==21.3.4
+tortoise-orm[mysql]==0.17.2
