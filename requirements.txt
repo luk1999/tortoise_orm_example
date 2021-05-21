@@ -1,4 +1,7 @@
 aerich==0.5.3
 aiomysql==0.0.21
+alembic==1.6.2
+PyMySQL==0.9.3
 sanic==21.3.4
+SQLAlchemy==1.4.15
 tortoise-orm[mysql]==0.17.2

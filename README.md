@@ -1,4 +1,4 @@
-# Tortoise ORM example app
+# Tortoise ORM vs SQLAlchemy
 
 ## Prerequisites
 Make sure that you have Python 3.7 or later installed.
@@ -32,32 +32,30 @@ GRANT ALL PRIVILEGES ON tortoise.* TO 'test_user'@'%';
 GRANT ALL PRIVILEGES ON alchemy.* TO 'test_user'@'%';
 ```
 
+# Tortoise ORM example
+Go to `src_tortoise` directory.
+
 ## First run
-Go to project directory and activate venv:
+Activate venv:
 ```bash
 pipenv shell
 ```
-
-Go to `src_tortoise` directory.
 
 Run migrations:
 ```bash
 aeris upgrade
 ```
 
-Install fixture:
+Install fixtures:
 ```bash
 python app.py init
 ```
 
 ## Run app
-### Tortoise ORM version
-Activate venv in project directory:
+Activate venv if you haven't done that before:
 ```bash
 pipenv shell
 ```
-
-Go to `src_tortoise` directory.
 
 Run server:
 ```bash
@@ -70,3 +68,40 @@ Open `http://localhost:8080/user` in your web browser.
  - GET `/user` - list of users with `username` and `email`
  - GET `/user/name` - list of usernames
  - GET `/user/full` - list of users with assigned groups and addresses
+
+# SQLAlchemy example
+Go to `src_alchemy` directory.
+
+## First run
+Activate venv:
+```bash
+pipenv shell
+```
+
+Run migrations:
+```bash
+alembic upgrade head
+```
+
+Install fixtures:
+```bash
+python app.py init
+```
+
+## Run app
+Activate venv if you haven't done that before:
+```bash
+pipenv shell
+```
+
+Run server:
+```bash
+python app.py
+```
+
+Open `http://localhost:8080/user` in your web browser.
+
+## Endpoints list
+- GET `/user` - list of users with `username` and `email`
+- GET `/user/name` - list of usernames
+- GET `/user/full` - list of users with assigned groups and addresses
