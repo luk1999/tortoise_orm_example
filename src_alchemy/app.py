@@ -62,8 +62,8 @@ async def list_all_full(request):
 @app.route("/user/names")
 async def list_all_names(request):
     session = request.ctx.session
-    users = session.query(User.username)
-    return response.json({"users": [user.username for user in users]})
+    users = session.query(User.username).values_list("username", flat=True)
+    return response.json({"users": users})
 
 
 if __name__ == "__main__":
